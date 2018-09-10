@@ -20,7 +20,11 @@ chrome.extension.sendMessage({}, function (response) {
 						btn.innerText = 'Like Posts';
 						btn.style.margin = '25px auto 0px auto';
 						btn.style.width = '250px';
-						btn.onclick = automation.hashtag;
+						if (window.location.href.indexOf('tags') !== -1) {
+							btn.onclick = automation.hashtag;
+						} else {
+							btn.onclick = automation.homepage;
+						}
 						container.insertBefore(btn, container.firstChild);
 					}
 				},
@@ -38,15 +42,19 @@ chrome.extension.sendMessage({}, function (response) {
 						const heart = document.querySelector('button.coreSpriteHeartOpen'),
 							arrow = document.querySelector('a.coreSpriteRightPaginationArrow');
 							test = document.querySelector('span.glyphsSpriteHeart__outline__24__grey_9');
-						if (heart && test) {
-							heart.click();
-						} 
-						if (arrow) {
-							arrow.click();
-						} else {
+						if (!arrow) {
 							clearInterval(interval);
 						}
+						if (heart && test) {
+							heart.click();
+						}
+						if (arrow) {
+							arrow.click();
+						}
 					}, app.speed);
+				},
+				homepage: () => {
+					console.log(true);
 				}
 			}
 
