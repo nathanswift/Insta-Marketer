@@ -40,7 +40,8 @@ chrome.extension.sendMessage({}, function (response) {
 					gallery.click();
 					const interval = setInterval(() => {
 						const heart = document.querySelector('button.coreSpriteHeartOpen'),
-							arrow = document.querySelector('a.coreSpriteRightPaginationArrow');
+							comment = document.querySelector('textarea.Ypffh'),
+							arrow = document.querySelector('a.coreSpriteRightPaginationArrow'),
 							test = document.querySelector('span.glyphsSpriteHeart__outline__24__grey_9');
 						if (!arrow) {
 							clearInterval(interval);
@@ -48,14 +49,29 @@ chrome.extension.sendMessage({}, function (response) {
 						if (heart && test) {
 							heart.click();
 						}
+						if (comment) {
+							comment.value = '⏣ I really like your work!';
+						}
 						if (arrow) {
 							arrow.click();
 						}
 					}, app.speed);
-				},
-				homepage: () => {
-					console.log(true);
 				}
+				/*homepage: () => {
+					const interval = setInterval(() => {
+						const hearts = document.querySelectorAll('button.coreSpriteHeartOpen'),
+							count = hearts.length;
+						let heart = null;
+						do {
+							heart = hearts[0];
+							if (heart.childNodes[0].classList.contains('glyphsSpriteHeart__outline__24__grey_9')) {
+								hearts.onclick = 
+								console.log(true);
+							}
+							console.log(heart.childNodes[0]);
+						} while (!heart);
+					}, app.speed);
+				}*/
 			}
 
 			// track all clicks to inject uis
