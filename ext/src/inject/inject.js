@@ -5,7 +5,7 @@ chrome.extension.sendMessage({}, function (response) {
 
 			// init obj for storing app data
 			let app = {
-				speed: 4000
+				speed: 5000
 			}
 
 			// build operations for uis
