@@ -1,0 +1,22 @@
+{
+  "name": "insta-marketer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanswift/Insta-Marketer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathanswift/Insta-Marketer/issues"
+  },
+  "homepage": "https://github.com/nathanswift/Insta-Marketer#readme",
+  "dependencies": {
+    "casperjs": "^1.1.4"
+  }
+}
